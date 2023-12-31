@@ -1,0 +1,61 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::selection{
+    background-color: #25DCE0;
+}
+.container{
+    max-width: 1400px;
+    padding: 0 12px;
+    margin: 0;
+}
+
+.container-build{
+    padding: 0;
+    margin: 0 auto;
+}
+.container-build svg{
+    border-radius: 10px;
+}
+.container-build svg path:hover{
+    stroke: #00E0FF;
+    fill: #25DCE0;
+    fill-opacity: 0.3;
+    stroke-width: 2;
+}
+.container-build svg path{
+    fill: #ffffff00;
+    stroke: #ffffff00;
+}
+
+
+.title-page{
+    text-align: center;
+    padding: 12px;
+}
+.build-info{
+    position: absolute;
+    bottom: 50px;
+    left: 120px;
+}
+.build-info .card{
+    padding: 22px;
+    background-color: #464646 !important;
+    color: white;
+    box-shadow: -3px -3px 7px hsl(0deg 0% 27.45%), 3px 3px 5px rgb(70 70 70) !important;
+    
+}
+.build-info .info-title{
+    font-size: 20px;
+}
+
+
+@media (max-width: 920px) {
+    .build-info{
+        position: absolute;
+        bottom: auto;
+        left: auto;
+    }
+}
