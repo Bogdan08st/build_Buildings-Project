@@ -1,0 +1,12 @@
+.modal{
+    position: fixed;
+    overflow-y: hidden;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    background-color: #0000006b;
+    display: none;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+}

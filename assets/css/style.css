@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-*::selection{
+::selection{
     background-color: #25DCE0;
 }
 .container{
@@ -25,6 +25,7 @@
     fill-opacity: 0.3;
     stroke-width: 2;
 }
+
 .container-build svg path{
     fill: #ffffff00;
     stroke: #ffffff00;
@@ -49,6 +50,19 @@
 }
 .build-info .info-title{
     font-size: 20px;
+}
+
+.building-item.sold path{
+    fill: #c4000054;
+    stroke: #e00606e0;
+    stroke-width: 2;
+}
+.building-item.sold path:hover{
+    fill: #ff00005e;
+    stroke: #e00606e0;
+    fill-opacity: 1;
+    stroke-width: 2;
+    cursor: no-drop;
 }
 
 
