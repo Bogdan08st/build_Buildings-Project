@@ -19,6 +19,7 @@
 .container-build svg{
     border-radius: 10px;
 }
+
 .container-build svg path:hover{
     stroke: #00E0FF;
     fill: #25DCE0;
@@ -45,7 +46,7 @@
     padding: 22px;
     background-color: #464646 !important;
     color: white;
-    box-shadow: -3px -3px 7px hsl(0deg 0% 27.45%), 3px 3px 5px rgb(70 70 70) !important;
+    box-shadow: -2px -2px 4px hsl(0deg 0% 27.45%), 3px 3px 5px rgb(70 70 70) !important;
     
 }
 .build-info .info-title{
@@ -66,10 +67,18 @@
 }
 
 
+
+
+.container-build-1 svg{
+    border-radius: 0;
+}
+
+
 @media (max-width: 920px) {
     .build-info{
         position: absolute;
         bottom: auto;
         left: auto;
+        top: auto !important;
     }
 }
