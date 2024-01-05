@@ -16,18 +16,18 @@
     padding: 0;
     margin: 0 auto;
 }
-.container-build svg{
+ .container-build svg{
     border-radius: 10px;
 }
 
-.container-build svg path:hover{
+ .container-build svg path:hover{
     stroke: #00E0FF;
     fill: #25DCE0;
     fill-opacity: 0.3;
     stroke-width: 2;
 }
 
-.container-build svg path{
+ .container-build svg path{
     fill: #ffffff00;
     stroke: #ffffff00;
 }
@@ -81,4 +81,83 @@
         left: auto;
         top: auto !important;
     }
+}
+
+/*floor-Page*/
+
+.floor-page .status-cell{
+    fill: #80D34E;
+    stroke: black;
+    stroke-width: 2;
+}
+.floor-page .container{
+    margin: 0 auto;
+}
+.floor-page .flat-text{
+    white-space: pre;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0em;
+    fill: black;
+}
+.floor-page .flat-border{
+    fill: white;
+    stroke: black;
+    stroke-width: 2;
+}
+.floor-page .flat-path{
+    fill: #00e1ff00;
+    stroke: #00e1ff00;
+    cursor: pointer;
+}
+.floor-page .flat-path:hover{
+    fill: #00e1ff71;
+    stroke: #00e1ff;
+}
+.floor-page .active .flat-path{
+    fill: #00e1ff71;
+    stroke: #00e1ff;
+}
+.floor-page .booking .flat-path:hover{
+    fill: #4d4afe91;
+    stroke: #2926e5;
+}
+.floor-page .sold .flat-path{
+    fill: #c4000054;
+    stroke: #e00606e0;
+}
+.floor-page .sold .flat-path:hover{
+    fill: #ff00005e;
+    stroke: #e00606e0;
+}
+.floor-page .action .flat-path:hover{
+    fill: #22e22baf;
+    stroke: #00ff2f;
+}
+
+.floor-page .action .status-cell{
+    fill: #80D34E;
+}
+.floor-page .booking .status-cell{
+    fill: #6B68FF;
+}
+.floor-page .free .status-cell{
+    fill: #00DEFC;
+}
+.floor-page .sold .status-cell{
+    fill: #D34E4E;
+}
+
+.flat-info{
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    justify-content: center;
+    background-color: #464646;
+}
+.flat-info .flat-item {
+    padding: 12px;
+    border: 1px solid black;
+    background-color: #999999;
 }

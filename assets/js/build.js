@@ -123,3 +123,193 @@ const InstallPositionBuildInfo = ()=>{
 
 }
 document.querySelector('.build-info') ? InstallPositionBuildInfo() : null;
+
+
+const flatAttr = [{
+    id: 1,
+    house: 3,
+    floor: 5,
+    rooms: 1,
+    square: "82.3 m²",
+    price: "700$",
+    totalPrice: "45000$",
+    flatNumber: 1,
+    status: "booking",
+},
+{
+    id: 2,
+    house: 3,
+    floor: 5,
+    rooms: 2,
+    square: "60.7 m²",
+    price: "500$",
+    totalPrice: "25000$",
+    flatNumber: 2,
+    status: "sold",
+},
+{
+    id: 3,
+    house: 3,
+    floor: 5,
+    rooms: 2,
+    square: "60.7 m²",
+    price: "600$",
+    totalPrice: "30000$",
+    flatNumber: 3,
+    status: "free",
+},
+{
+    id: 4,
+    house: 3,
+    floor: 5,
+    rooms: 3,
+    square: "82 m²",
+    price: "800$",
+    totalPrice: "51000$",
+    flatNumber: 4,
+    status: "action",
+},
+{
+    id: 5,
+    house: 3,
+    floor: 5,
+    rooms: 3,
+    square: "79.7 m²",
+    price: "750$",
+    totalPrice: "46000$",
+    flatNumber: 5,
+    status: "booking",
+},
+{
+    id: 6,
+    house: 3,
+    floor: 5,
+    rooms: 1,
+    square: "39.2 m²",
+    price: "400$",
+    totalPrice: "35000$",
+    flatNumber: 6,
+    status: "action",
+},
+{
+    id: 7,
+    house: 3,
+    floor: 5,
+    rooms: 1,
+    square: "42 m²",
+    price: "420$",
+    totalPrice: "36000$",
+    flatNumber: 7,
+    status: "sold",
+},
+{
+    id: 8,
+    house: 3,
+    floor: 5,
+    rooms: 1,
+    square: "39.2 m²",
+    price: "400$",
+    totalPrice: "35000$",
+    flatNumber: 8,
+    status: "booking",
+},
+{
+    id: 9,
+    house: 3,
+    floor: 5,
+    rooms: 3,
+    square: "79.3 m²",
+    price: "750$",
+    totalPrice: "55000$",
+    flatNumber: 9,
+    status: "free",
+},
+]
+
+
+
+window.addEventListener('load', function(){
+
+    function InstallFloorPlan(){
+        const flats = document.querySelectorAll('.flat')
+        const flatInfo = document.querySelector('.flat-info')
+
+        const flatObj = [{
+            id: 1,
+            house: 3,
+            floor: 5,
+            rooms: 1,
+            square: "82.3 m²",
+            price: "700$",
+            totalPrice: "45000$",
+            flatNumber: 3,
+            status: "booking",
+        }];
+
+        const renderInfo = (array)=>{
+            const flatInformation = array.map((item) =>{
+                return `
+                    <div class="flat-item">
+                        Номер дома: ${item.house}
+                    </div>
+                    <div class="flat-item">
+                        Поверх: ${item.floor}
+                    </div>
+                    <div class="flat-item">
+                        К-ть Кімнат: ${item.rooms}
+                    </div>
+                    <div class="flat-item">
+                        Площа: ${item.square}
+                    </div>
+                    <div class="flat-item">
+                        Ціна за м²: ${item.price}
+                    </div>
+                    <div class="flat-item">
+                        Ціна: ${item.totalPrice}
+                    </div>
+                    <div class="flat-item">
+                        Номер квартири: ${item.flatNumber}
+                    </div>
+                    <div class="flat-item">
+                        Статус: ${item.status}
+                    </div>
+                `;
+            })
+            flatInfo.innerHTML = flatInformation;
+        };
+        renderInfo(flatObj);
+        const classRemoveActive = ()=> flats.forEach((item) =>{
+            item.classList.remove('active')
+        });
+
+        flats.forEach((flat) =>{
+
+            flat.addEventListener('click', ()=>{
+                classRemoveActive();
+                flat.classList.add('active');
+
+                const thisFlat = flat.getAttribute('data-flat');
+                const flatNumber = flatAttr.filter(
+                    (item) => item.flatNumber === Number(thisFlat),
+                );
+                renderInfo(flatNumber);
+            });
+
+
+            if(flat.classList.contains('booking')){
+                flat.querySelector('.flat-status').innerHTML = "Бронь";
+            }
+            else if(flat.classList.contains('sold')){
+                flat.querySelector('.flat-status').innerHTML = "Продана";
+            }
+            else if(flat.classList.contains('action')){
+                flat.querySelector('.flat-status').innerHTML = "Акция"
+            }
+            else {
+                flat.querySelector('.flat-status').innerHTML = "Свободна";
+            }
+        });
+    }
+
+    document.querySelector('.floor-page') ? InstallFloorPlan() : null;
+});
